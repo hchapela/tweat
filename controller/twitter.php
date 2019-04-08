@@ -6,7 +6,7 @@ use Abraham\TwitterOAuth\TwitterOAuth;
 
 class Twitter {
     public function __construct() {
-        $this->twitter = $this->twitterOAuthentification();
+        $this->auth= $this->twitterOAuthentification();
         $this->response = $this->twitterRequest();
         $this->tweets = $this->getTweets();
 
@@ -31,7 +31,7 @@ class Twitter {
     }
     
     public function twitterRequest() {
-        $tweetsObject = $this->twitter->get('statuses/user_timeline', [
+        $tweetsObject = $this->auth->get('statuses/user_timeline', [
             'screen_name' => 'HninouJulou',
             'exclude_replies' => true,
             'include_rts' => false,
