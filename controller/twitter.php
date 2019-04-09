@@ -9,11 +9,6 @@ class Twitter {
         $this->auth= $this->twitterOAuthentification();
         $this->response = $this->twitterRequest();
         $this->tweets = $this->getTweets();
-
-        echo '<pre>';
-        print_r($this->tweets);
-        echo '</pre>';
-
     }
 
     // Handle Oauth2 
