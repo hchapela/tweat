@@ -2,12 +2,9 @@
 
 class NaturalLanguageUnderstanding {
 
-
     public function __construct() {
         $this->text = "Just felt in love with that drumkit, Great performance @foals";
         $this->auth = $this->NLUAuth();
-        echo '<pre>';
-        echo '</pre>';
         $this->res = $this->getCurl();
 
         echo '<pre>';
@@ -27,11 +24,11 @@ class NaturalLanguageUnderstanding {
         curl_setopt($this->curl, CURLOPT_POST, true);
         curl_setopt($this->curl, CURLOPT_RETURNTRANSFER, 1);
         // Put user message & keywords (as a feature to analyze by Watson)
-        curl_setopt($curl, CURLOPT_POSTFIELDS, '{
+        curl_setopt($this->curl, CURLOPT_POSTFIELDS, '{
             "text":"'.$this->text.'",
             "features":
             {
-                "keywords":{}
+                "emotion": {}
             }
         }');
         // Put the API Key from config.ini file
