@@ -13,8 +13,10 @@ class Twitter {
         echo '<pre>';
         print_r($this->tweets);
         echo '</pre>';
+
     }
 
+    // Handle Oauth2 
     public function twitterOAuthentification() {
         $oauth = new TwitterOAuth(
             "xpRhGfmHTxPqO7K6DbkteUGWf",
@@ -30,9 +32,10 @@ class Twitter {
         return $twitter;
     }
     
+    // Get a list of tweets
     public function twitterRequest() {
         $tweetsObject = $this->auth->get('statuses/user_timeline', [
-            'screen_name' => 'HninouJulou',
+            'screen_name' => 'craftedbyhugo',
             'exclude_replies' => true,
             'include_rts' => false,
             'count' => 50,
@@ -41,6 +44,7 @@ class Twitter {
         return $tweetsObject;
     }
 
+    // Filter the content of the tweets wuthout date, likes etc.
     public function getTweets() {
         $tweets = [];
         foreach ($this->response as $_tweet => $value) {
@@ -53,3 +57,5 @@ class Twitter {
 }
 
 $twitter = new Twitter();
+
+

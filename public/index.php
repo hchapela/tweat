@@ -1,7 +1,7 @@
 <?php 
-// include '../controller/database.php';
-// include '../controller/analyzer.php';
-include '../controller/twitter.php';
+// include '../controller/twitter.php';
+// include '../controller/nlu.php';
+include '../controller/meal.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
