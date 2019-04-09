@@ -49,11 +49,10 @@ a {
 /* Home */
 
 .spitch {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: inline-block;
+  text-align: center;
   width: 100%;
-  height: 60px;
+  height: auto;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   font-size: 44px;
@@ -100,6 +99,45 @@ a {
   margin-left: 8px;
   background-image: url('../img/search.svg');
   background-repeat: no-repeat;
+  background-color: transparent;
   outline: none;
   cursor: pointer;
+}
+
+/* Responsive */
+
+@media screen and (max-width: 600px) {
+  .container {
+    margin: 0 5%;
+  }
+
+  .spitch {
+    text-align: left;
+  }
+
+  .search {
+    justify-content: space-between;
+    flex-direction: column;
+    height: 110px;
+  }
+
+  .search-bar {
+    width: 100%;
+  }
+
+  .search-btn {
+    content: "Find a meal";
+    border: 0px solid transparent;
+    border-radius: 100px;
+    width: 186px;
+    height: 44px;
+    margin: 0;
+    padding: 5px 26px 6px 23px;
+    background-image: none;
+    background-color: #1A3263;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+  }
 }

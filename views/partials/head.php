@@ -5,5 +5,4 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="../public/assets/styles/style.css">
     <link href="https://fonts.googleapis.com/css?family=Arbutus+Slab|Montserrat:300,700|Source+Sans+Pro:300,400,600,600i,700" rel="stylesheet">
-    <script src="../public/assets/scripts/script.js"></script>
 </head>
