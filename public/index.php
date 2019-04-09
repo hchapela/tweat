@@ -14,6 +14,6 @@
         <div class="spitch azul">Eat what you tweet<span class="limon">.</span></div>
         <?php include(VIEWS."partials/search.php"); ?>
     </div>
-    <script src="../public/assets/scripts/script.js"></script>
+    <?php include(VIEWS."partials/footer.php"); ?>
 </body>
 </html>

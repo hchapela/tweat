@@ -28,5 +28,6 @@
             </div>
         </form>
     </div>
+    <?php include(VIEWS."partials/footer.php"); ?>
 </body>
 </html>

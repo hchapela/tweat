@@ -15,5 +15,6 @@
         <p>Les dooodles avec le plus de vote avant le 01/06/2019 seront ensuite graffé par vous ou notre artiste sur le mur de la cour de l’école. </p>
         <p>Si vous voulez plus d’information, n’hésitez pas à nous suivre sur Instagram @<a href="instagram.com">dooodle_hetic</a>.</p>
     </div>
+    <?php include(VIEWS."partials/footer.php"); ?>
 </body>
 </html>
