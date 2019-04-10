@@ -1,22 +1,14 @@
 <?php 
     // include '../controller/twitter.php';
     // include '../controller/nlu.php';
-    include '../controller/meal.php';
+    // include '../controller/meal.php';
     define('PUBLIC', 'http://localhost:8888/public/');
 ?>
 <!DOCTYPE html>
 <html lang="en">
-    <?php //include("../partials/head.php"); ?>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tweat.</title>
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Arbutus+Slab|Montserrat:300,700|Source+Sans+Pro:300,400,600,600i,700" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../../public/assets/styles/style.css">
-</head>
+    <?php include(VIEWS."partials/head.php"); ?>
 <body>
-    <?php include("../partials/header.php"); ?>
+    <?php include(VIEWS."partials/header.php"); ?>
     <div class="results container">
         <div class="nickname azul"><span class="limon">@</span>Nickname<a href="#" class="icon-twitter"></a></div>
         <div class="charts">
