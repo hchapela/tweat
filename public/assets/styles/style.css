@@ -256,12 +256,43 @@ a {
   padding: 16px 0;
 }
 
+.meal-name {
+  line-height: 110px;
+}
+
 .interactions {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
   margin: 16px 0;
+}
+
+/* ERROR 404 */
+
+.error404 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 80vh;
+}
+
+.error-image {
+  width: 90%;
+  height: 26%;
+  background-image: url("../img/error404.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.error-message {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  height: 100px;
 }
 
 /* Button */

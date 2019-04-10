@@ -31,6 +31,5 @@
             <a href="#" class="share"><span class="icon-share"></span></a >
         </div>
     </div>
-    <?php include(VIEWS."partials/footer.php");  ?>
 </body>
 </html>

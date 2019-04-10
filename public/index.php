@@ -3,6 +3,7 @@
     // Configuration
     // define('SITEURL', 'http://localhost:8888/tweat/');
     define('VIEWS', '../views/');
+    define('SITEURL', '/tweat/');
 
     // Routing
     $q = !empty($_GET['q']) ? $_GET['q'] : 'home';
