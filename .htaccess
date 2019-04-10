@@ -1,4 +1,4 @@
 RewriteEngine On
 
 RewriteCond %{SCRIPT_FILENAME} !-f
-RewriteRule ^(.*)$ ./index.php?q=$1 [QSA]
+RewriteRule ^(.*)$ ./public/index.php?q=$1 [QSA]
