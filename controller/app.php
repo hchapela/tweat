@@ -2,6 +2,7 @@
 
 include 'twitter.php';
 include 'nlu.php';
+include 'translate.php';
 include 'meal.php';
 
 
@@ -18,7 +19,7 @@ class App {
     }
 
     public function getTweets() {
-        $this->twitter = new Twitter("vanschneider");
+        $this->twitter = new Twitter("EmmanuelMacron");
         $this->tweets = $this->twitter->tweets;
         return array_slice($this->tweets, 0, $this->maxTweets);
     }
@@ -26,8 +27,15 @@ class App {
     public function getAnalyze() {
         // On each tweet analyze
         $this->nlu = new NaturalLanguageUnderstanding();
+        $this->translate = new Translate();
         $this->emotions = [];
         foreach ($this->tweets as $_tweet) {
+            $lang = $this->translate->identifyLanguage($_tweet);
+            if ($lang !== "en") {
+                $format = $lang."-en";
+                $_tweet = $this->translate->translateText($_tweet, $format);
+                
+            }
             $emotion = $this->nlu->nlu($_tweet);
             array_push($this->emotions, $emotion);
         }

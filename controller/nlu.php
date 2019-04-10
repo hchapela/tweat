@@ -11,7 +11,6 @@ class NaturalLanguageUnderstanding {
     public function nlu($_text) {
         $this->auth = $this->NLUAuth();
         $results = $this->getCurl($_text);
-        $this->aff($_text);
         $this->emotion = $this->getAverage($results);
         return $this->emotion;
     }
@@ -27,7 +26,6 @@ class NaturalLanguageUnderstanding {
                 $maxIndex = $key;
             }
         }
-        $this->aff('max is '.$maxIndex.': '. $_results[$maxIndex]);
         return $maxIndex;
     }
 
