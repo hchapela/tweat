@@ -134,7 +134,7 @@ a {
 }
 
 .main {
-  height: 70%;
+  height: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -272,20 +272,42 @@ a {
 
 .error404 {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   flex-direction: column;
-  height: 80vh;
+  height: 320px;
 }
 
 .error-image {
-  width: 90%;
-  height: 26%;
-  background-image: url("../img/error404.svg");
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  width: 300px;
+  height: 30%;
+}
+
+.error-svg {
+  width: 33%;
+  height: 100%;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+  transition: 3.5s infinite cubic-bezier(0.165, 0.84, 0.44, 1);
+  animation: floatingFood linear infinite 1.6s;
+  will-change: transform;
 }
+
+.error4-1, .error4-2 {
+  background-image: url("../img/error-4.svg");
+}
+
+.error0 {
+  background-image: url("../img/error-0.svg");
+}
+
+.error0 { animation-delay: 0.2s; }
+.error4-2 { animation-delay: 0.4s; }
 
 .error-message {
   display: flex;
@@ -320,6 +342,102 @@ a {
   height: 44px;
   border-radius: 100px;
   position: relative;
+}
+
+/* Illustrations */
+
+.illustrations {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  height: 30vh;
+}
+
+.illu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  width: 25%;
+  height: 180px;
+  position: relative;
+}
+
+.illus {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  transition: 3.5s infinite cubic-bezier(0.165, 0.84, 0.44, 1);
+  animation: floatingFood linear infinite 1.6s;
+  will-change: transform;
+}
+
+.shadows {
+  display: block;
+  content: "";
+  width: 20%;
+  height: 4px;
+  background-color: #333;
+  opacity: 0.32;
+  filter: blur(2px);
+  border-radius: 100%;
+  transition: 3.5s infinite cubic-bezier(0.165, 0.84, 0.44, 1);
+  position: absolute;
+  bottom: 0;
+  animation: floatingShadow linear infinite 1.6s;
+  will-change: transform;
+}
+
+.illus-1 {
+  background-image: url('../img/color/burger_color.svg');
+  width: 80%;
+  animation-delay: 0.4s;
+}
+.illus-2 {
+  background-image: url('../img/color/ramen_colors.svg');
+}
+.illus-3 {
+  background-image: url('../img/color/taco_colors.svg');
+  animation-delay: 0.1s;
+}
+
+.shadow-1 { animation-delay: 0.4s }
+.shadow-2 { left: 33%; }
+.shadow-3 { animation-delay: 0.1s }
+
+/* Animations */
+
+@keyframes floatingFood {
+  0% {
+    transform: translateY(10px);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(10px);
+  }
+}
+
+@keyframes floatingShadow {
+  0% {
+    transform: scaleX(1);
+    
+  }
+  50% {
+    transform: scaleX(2);
+
+  }
+  100% {
+    transform: scaleX(1);
+
+  }
 }
 
 /* Responsive */
