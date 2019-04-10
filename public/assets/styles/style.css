@@ -96,6 +96,16 @@ a {
   left: 8.5px;
 }
 
+.icon-exit {
+  display: block;
+  width: 22px;
+  height: 22px;
+  background-image: url('../img/exit.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
 /* Header */
 
 .header {
@@ -439,6 +449,63 @@ a {
 
   }
 }
+
+/* Modale */
+
+.modale {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(251, 237, 213, 0.32);
+  z-index: 10;
+}
+
+.share {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 70%;
+  height: auto;
+  background-color: #fff;
+  z-index: 15;
+  border-radius: 8px;
+  border: 2px solid rgba(250, 184, 92, 0.32);
+}
+
+.share-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+}
+
+.share-exit {
+  margin: 3% 4%;
+  cursor: pointer;
+}
+
+.share-message {
+  width: 92%;
+  margin: 0 4%;
+  background-color: rgba(251, 237, 213, 0.32);
+}
+
+.share-example {
+  margin: 5px 14px;
+}
+
+.twitter-mention-button {
+  margin: 3% 4%;
+}
+
+.share-title { margin: 3% 4%; }
 
 /* Responsive */
 
