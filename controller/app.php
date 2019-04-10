@@ -17,7 +17,7 @@ class App {
     }
 
     public function getTweets() {
-        $this->twitter = new Twitter("HninouJulou");
+        $this->twitter = new Twitter("realDonaldTrump");
         $this->tweets = $this->twitter->tweets;
         return array_slice($this->tweets, 0, $this->maxTweets);
     }
@@ -26,12 +26,7 @@ class App {
         // On each tweet analyze
         $this->nlu = new NaturalLanguageUnderstanding();
         foreach ($this->tweets as $_tweet) {
-            $this->nlu->aff($_tweet);
+            $this->nlu->nlu($_tweet);
         }
     }
 }
-
-
-echo '<pre>';
-print_r("run");
-echo '</pre>';

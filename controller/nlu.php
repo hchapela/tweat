@@ -4,7 +4,6 @@ class NaturalLanguageUnderstanding {
 
     public function __construct() {
         // $this->text = "Just felt in love with that drumkit, Great performance @foals";
-        // $this->auth = $this->NLUAuth();
         // $this->res = $this->getCurl();
     }
 
@@ -14,20 +13,42 @@ class NaturalLanguageUnderstanding {
         echo '</pre>';
     }
 
+    public function nlu($_text) {
+        $this->auth = $this->NLUAuth();
+        $results = $this->getCurl($_text);
+        $this->aff($_text);
+        $this->emotion = $this->getAverage($results);
+        // $this->aff($results);
+    }
+
+    public function getAverage($_results) {
+        $_results = ($_results->emotion->document->emotion);
+        $_results = (array) $_results;
+        $maxValue = 0;
+        $maxIndex = "";
+        foreach ($_results as $key => $value) {
+            if($value > $maxValue) {
+                $maxValue = $value;
+                $maxIndex = $key;
+            }
+        }
+        $this->aff('max is '.$maxIndex.': '. $_results[$maxIndex]);
+        return $maxIndex;
+    }
+
     public function NLUAuth() {
-        header('Content-type: application/json; charset=utf-8');
         $auth = parse_ini_file('../config/config.ini');
         return $auth;
     }
 
-    public function getCurl() {
+    public function getCurl($_text) {
         $this->curl = curl_init();
         curl_setopt($this->curl, CURLOPT_URL, 'https://gateway-lon.watsonplatform.net/natural-language-understanding/api/v1/analyze?version=2018-03-19');
         curl_setopt($this->curl, CURLOPT_POST, true);
         curl_setopt($this->curl, CURLOPT_RETURNTRANSFER, 1);
         // Put user message & keywords (as a feature to analyze by Watson)
         curl_setopt($this->curl, CURLOPT_POSTFIELDS, '{
-            "text":"'.$this->text.'",
+            "text":"'.$_text.'",
             "features":
             {
                 "emotion": {}
