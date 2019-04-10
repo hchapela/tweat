@@ -8,13 +8,25 @@ include 'meal.php';
 class App {
 
     public function __construct() {
-        $this->twitter = new Twitter();
-        $this->tweets = $this->twitter->tweets;
+        // Number of tweets you want
+        $this->maxTweets = 5;
+        // Get Tweets then slice them
+        $this->tweets = $this->getTweets();
+        // Analyze on each Tweet
+        $this->getAnalyze();
+    }
 
+    public function getTweets() {
+        $this->twitter = new Twitter("HninouJulou");
+        $this->tweets = $this->twitter->tweets;
+        return array_slice($this->tweets, 0, $this->maxTweets);
+    }
+
+    public function getAnalyze() {
+        // On each tweet analyze
+        $this->nlu = new NaturalLanguageUnderstanding();
         foreach ($this->tweets as $_tweet) {
-            echo '<pre>';
-            print_r($_tweet);
-            echo '</pre>';
+            $this->nlu->aff($_tweet);
         }
     }
 }

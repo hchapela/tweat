@@ -5,7 +5,9 @@ require "../vendor/autoload.php";
 use Abraham\TwitterOAuth\TwitterOAuth;
 
 class Twitter {
-    public function __construct() {
+    private $account;
+    public function __construct($account) {
+        $this->account = $account;
         $this->auth= $this->twitterOAuthentification();
         $this->response = $this->twitterRequest();
         $this->tweets = $this->getTweets();
@@ -30,7 +32,7 @@ class Twitter {
     // Get a list of tweets
     public function twitterRequest() {
         $tweetsObject = $this->auth->get('statuses/user_timeline', [
-            'screen_name' => 'craftedbyhugo',
+            'screen_name' => $this->account,
             'exclude_replies' => true,
             'include_rts' => false,
             'count' => 50,

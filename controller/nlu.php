@@ -3,9 +3,15 @@
 class NaturalLanguageUnderstanding {
 
     public function __construct() {
-        $this->text = "Just felt in love with that drumkit, Great performance @foals";
-        $this->auth = $this->NLUAuth();
-        $this->res = $this->getCurl();
+        // $this->text = "Just felt in love with that drumkit, Great performance @foals";
+        // $this->auth = $this->NLUAuth();
+        // $this->res = $this->getCurl();
+    }
+
+    public function aff($_text) {
+        echo '<pre>';
+        print_r($_text);
+        echo '</pre>';
     }
 
     public function NLUAuth() {
