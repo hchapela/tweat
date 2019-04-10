@@ -19,7 +19,7 @@ class App {
     }
 
     public function getTweets() {
-        $this->twitter = new Twitter("EmmanuelMacron");
+        $this->twitter = new Twitter("HninouJulou");
         $this->tweets = $this->twitter->tweets;
         return array_slice($this->tweets, 0, $this->maxTweets);
     }
@@ -30,12 +30,15 @@ class App {
         $this->translate = new Translate();
         $this->emotions = [];
         foreach ($this->tweets as $_tweet) {
+            // Identify language
             $lang = $this->translate->identifyLanguage($_tweet);
+            // If not english then translate to english
             if ($lang !== "en") {
                 $format = $lang."-en";
                 $_tweet = $this->translate->translateText($_tweet, $format);
                 
             }
+            // Analyze tweet in english
             $emotion = $this->nlu->nlu($_tweet);
             array_push($this->emotions, $emotion);
         }
