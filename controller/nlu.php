@@ -2,11 +2,6 @@
 
 class NaturalLanguageUnderstanding {
 
-    public function __construct() {
-        // $this->text = "Just felt in love with that drumkit, Great performance @foals";
-        // $this->res = $this->getCurl();
-    }
-
     public function aff($_text) {
         echo '<pre>';
         print_r($_text);
@@ -18,7 +13,7 @@ class NaturalLanguageUnderstanding {
         $results = $this->getCurl($_text);
         $this->aff($_text);
         $this->emotion = $this->getAverage($results);
-        // $this->aff($results);
+        return $this->emotion;
     }
 
     public function getAverage($_results) {

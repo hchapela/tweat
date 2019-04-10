@@ -1,10 +1,28 @@
 <?php
 
-class Meal {
-    public function __construct() {
-        $this->ingredient = "chicken";
-        $this->menuList = $this->getMenuList($this->ingredient);
+class MealDB {
+
+    public function newMeal($_emotion) {
+        // Get all ingredients for each emotion in json
+        $string = file_get_contents("../config/ingredients.json");
+        $this->ingredients = json_decode($string, true);
+        // Get ingredients of the detected emotion
+        $this->ingredients = $this->ingredients[$_emotion];
+        // Choose random ingredient BUT AT FINAL USER WILL CHOOSE HIS INGREDIENT
+        $randIndex = $this->getRandIndex($this->ingredients['ingredients']);
+        // Get list of menus with the chosen ingredients
+        $this->getMenuList($this->ingredients['ingredients'][$randIndex]);
     }
+
+    // Get random index in an array
+    public function getRandIndex($_array) {
+        $tabLength = count($_array);
+        $index = rand(0, $tabLength);
+        // Issue with index too high
+        $index += ($index != 0 ? -1 : 0);
+        return $index;
+    }
+
 
     // Get a list of menus with an ingredient
     public function getMenuList($_ingredient = "tomato") {
@@ -14,10 +32,9 @@ class Meal {
         ]);
 
         $this->mealList = $this->requestUrl($url)->meals;
-        $tabLength = count($this->mealList);
-        $index = rand(0, $tabLength);
-        // Issue with index too high
-        $index += ($index != 0 ? -1 : 0);
+
+        // getRandIndex in Menu List
+        $index = $this->getRandIndex($this->mealList);
 
         $this->getMeal($this->mealList[$index]);
     }
@@ -29,6 +46,10 @@ class Meal {
             'i' => $meal->idMeal
         ]);
         $this->menu = $this->requestUrl($url);
+
+        echo '<pre>';
+        print_r($this->menu);
+        echo '</pre>';
     }
 
     // Request to ThemealAPI

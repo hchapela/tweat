@@ -1,0 +1,50 @@
+{
+    "sadness": {
+        "sentence": "",
+        "ingredients": [
+            "chicken",
+            "lentils",
+            "banana",
+            "zucchini",
+            "oatmeal"
+        ]
+    },
+    "joy": {
+        "sentence": "",
+        "ingredients": [
+            "honey",
+            "punmpkin",
+            "salmon",
+            "beef",
+            "avocado",
+            "strawberry"
+        ]
+    },
+    "fear": {
+        "sentence": "",
+        "ingredients": [
+            "dark_chocolate",
+            "ginger",
+            "mushrooms",
+            "tomato"
+        ]
+    },
+    "disgust": {
+        "sentence": "",
+        "ingredients": [
+            "potatoes",
+            "noodles",
+            "mint",
+            "spaghetti"
+        ]
+    },
+    "anger": {
+        "sentence": "",
+        "ingredients": [
+            "mussels",
+            "eggs",
+            "soya_milk",
+            "rice"
+        ]
+    }
+}

@@ -35,7 +35,7 @@ class Twitter {
             'screen_name' => $this->account,
             'exclude_replies' => true,
             'include_rts' => false,
-            'count' => 50,
+            'count' => 20,
         ]);
 
         return $tweetsObject;
