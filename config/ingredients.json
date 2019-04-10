@@ -1,50 +1,58 @@
 {
-    "sadness": {
-        "sentence": "",
-        "ingredients": [
-            "chicken",
-            "lentils",
-            "banana",
-            "zucchini",
-            "oatmeal"
-        ]
+    "emotions": {
+        "sadness": {
+            "sentence": "",
+            "ingredients": [
+                "chicken",
+                "lentils",
+                "banana",
+                "zucchini",
+                "oatmeal"
+            ]
+        },
+        "joy": {
+            "sentence": "",
+            "ingredients": [
+                "honey",
+                "punmpkin",
+                "salmon",
+                "beef",
+                "avocado",
+                "strawberry"
+            ]
+        },
+        "fear": {
+            "sentence": "",
+            "ingredients": [
+                "dark_chocolate",
+                "ginger",
+                "mushrooms",
+                "tomato"
+            ]
+        },
+        "disgust": {
+            "sentence": "",
+            "ingredients": [
+                "potatoes",
+                "noodles",
+                "mint",
+                "spaghetti"
+            ]
+        },
+        "anger": {
+            "sentence": "",
+            "ingredients": [
+                "mussels",
+                "eggs",
+                "soya_milk",
+                "rice"
+            ]
+        }
     },
-    "joy": {
-        "sentence": "",
-        "ingredients": [
-            "honey",
-            "punmpkin",
-            "salmon",
-            "beef",
-            "avocado",
-            "strawberry"
-        ]
-    },
-    "fear": {
-        "sentence": "",
-        "ingredients": [
-            "dark_chocolate",
-            "ginger",
-            "mushrooms",
-            "tomato"
-        ]
-    },
-    "disgust": {
-        "sentence": "",
-        "ingredients": [
-            "potatoes",
-            "noodles",
-            "mint",
-            "spaghetti"
-        ]
-    },
-    "anger": {
-        "sentence": "",
-        "ingredients": [
-            "mussels",
-            "eggs",
-            "soya_milk",
-            "rice"
-        ]
+
+    "fakerecipe": {
+        "strMeal": "Fish sticks",
+        "ytb": "https://www.youtube.com/watch?v=ADGWPorwkYg",
+        "strMealThumb": "https://www.displayfakefoods.com/store/pc/catalog/vc126350l_205_detail.jpg"
     }
 }

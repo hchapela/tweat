@@ -18,7 +18,7 @@ class App {
     }
 
     public function getTweets() {
-        $this->twitter = new Twitter("Immersive_g");
+        $this->twitter = new Twitter("vanschneider");
         $this->tweets = $this->twitter->tweets;
         return array_slice($this->tweets, 0, $this->maxTweets);
     }

@@ -38,6 +38,12 @@ class Twitter {
             'count' => 20,
         ]);
 
+        // Handle errors
+        if (isset($tweetsObject->errors)) {
+            echo '<pre>';
+            print_r($tweetsObject);
+            echo '</pre>';
+        }
         return $tweetsObject;
     }
 

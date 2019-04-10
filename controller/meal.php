@@ -5,9 +5,9 @@ class MealDB {
     public function newMeal($_emotion) {
         // Get all ingredients for each emotion in json
         $string = file_get_contents("../config/ingredients.json");
-        $this->ingredients = json_decode($string, true);
+        $this->json = json_decode($string, true);
         // Get ingredients of the detected emotion
-        $this->ingredients = $this->ingredients[$_emotion];
+        $this->ingredients = $this->json['emotions'][$_emotion];
         // Choose random ingredient BUT AT FINAL USER WILL CHOOSE HIS INGREDIENT
         $randIndex = $this->getRandIndex($this->ingredients['ingredients']);
         // Get list of menus with the chosen ingredients
@@ -16,7 +16,8 @@ class MealDB {
 
     // Get random index in an array
     public function getRandIndex($_array) {
-        $tabLength = count($_array);
+        
+        $tabLength = count((array) $_array);
         $index = rand(0, $tabLength);
         // Issue with index too high
         $index += ($index != 0 ? -1 : 0);
@@ -35,13 +36,19 @@ class MealDB {
 
         // getRandIndex in Menu List
         $index = $this->getRandIndex($this->mealList);
-
-        $this->getMeal($this->mealList[$index]);
+        if($this->mealList === NULL) {
+            echo '<pre>';
+            print_r($this->json["fakerecipe"]);
+            echo '</pre>';
+        } else {
+            $this->getMeal($this->mealList[$index]);
+        }
     }
 
     // Get a meal within the list of menus
     public function getMeal($meal) {
         $url = "https://www.themealdb.com/api/json/v1/1/lookup.php?";
+        
         $url .= http_build_query([
             'i' => $meal->idMeal
         ]);
