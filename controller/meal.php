@@ -45,5 +45,3 @@ class Meal {
         return $result;
     }
 }
-
-$meal = new Meal();

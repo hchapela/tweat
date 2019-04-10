@@ -6,10 +6,6 @@ class NaturalLanguageUnderstanding {
         $this->text = "Just felt in love with that drumkit, Great performance @foals";
         $this->auth = $this->NLUAuth();
         $this->res = $this->getCurl();
-
-        echo '<pre>';
-        print_r($this->res);
-        echo '</pre>';
     }
 
     public function NLUAuth() {
@@ -48,5 +44,3 @@ class NaturalLanguageUnderstanding {
         return $result;
     }
 }
-
-$nlu = new NaturalLanguageUnderstanding();

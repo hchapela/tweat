@@ -1,7 +1,7 @@
 <?php 
-    // include '../controller/twitter.php';
-    // include '../controller/nlu.php';
-    include '../controller/meal.php';
+    include '../controller/app.php';
+    $app = new App();
+
     define('PUBLIC', 'http://localhost:8888/public/');
     define('VIEWS', '../views/');
 ?>

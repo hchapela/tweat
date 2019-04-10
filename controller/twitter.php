@@ -50,7 +50,3 @@ class Twitter {
         return $tweets;
     }
 }
-
-$twitter = new Twitter();
-
-
