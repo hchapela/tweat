@@ -1,0 +1,9 @@
+RewriteEngine On
+
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteRule ^(.*)$ ./public/index.php?q=$1 [QSA]
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteRule ^(.*)\.(gif|jpg|png|jpeg|css|js|swf)$ ./public/$1.$2
+
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteRule ^(.*)$ ./public/index.php?q=$1

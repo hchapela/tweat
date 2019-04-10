@@ -1,9 +1,3 @@
-<?php 
-    // include '../controller/twitter.php';
-    // include '../controller/nlu.php';
-    // include '../controller/meal.php';
-    define('PUBLIC', 'http://localhost:8888/public/');
-?>
 <!DOCTYPE html>
 <html lang="en">
     <?php include(VIEWS."partials/head.php"); ?>
@@ -37,6 +31,6 @@
             <a href="#" class="share"><span class="icon-share"></span></a >
         </div>
     </div>
-    <?php include(VIEWS."partials/footer.php"); ?>
+    <?php include(VIEWS."partials/footer.php");  ?>
 </body>
 </html>

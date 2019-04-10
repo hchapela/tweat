@@ -1,11 +1,8 @@
-<?php 
-    // include '../controller/app.php';
-    // $app = new App();
+<?php
 
-    // define('PUBLIC', 'http://localhost:8888/public/');
-    define('VIEWS', '../views/');
-        
     // Configuration
+    // define('SITEURL', 'http://localhost:8888/tweat/');
+    define('VIEWS', '../views/');
 
     // Routing
     $q = !empty($_GET['q']) ? $_GET['q'] : 'home';
@@ -22,4 +19,3 @@
     }
 
     include '../controller/'.$controller.'.php';
-?>
