@@ -39,6 +39,9 @@ class App {
         $this->nlu = new NaturalLanguageUnderstanding();
         $this->translate = new Translate();
         $this->emotions = [];
+        // Use for datavisualisation
+        $this->allEmotions = [0,0,0,0,0];
+        $this->iterations = 0;
         foreach ($this->tweets as $_tweet) {
             // Identify language
             $lang = $this->translate->identifyLanguage($_tweet);
@@ -49,11 +52,26 @@ class App {
                 
             }
             // Analyze tweet in english
-            $emotion = $this->nlu->nlu($_tweet);
+
+            $newEmotions = $this->nlu->nlu($_tweet);
+            $emotion = $this->nlu->getAverage($newEmotions);
+
             if($emotion !== "not emotion") {
+                // Prepare for calcul of datavisualisation
+                $newEmotions = ($newEmotions->emotion->document->emotion);
+                $newEmotions = (array) $newEmotions;
+                $this->allEmotions = $this->nlu->addNewEmotions($newEmotions, $this->allEmotions);
+                $this->iterations++;
+                // Push for meal request
                 array_push($this->emotions, $emotion);
             }
         }
+
+        $this->allEmotions = $this->nlu->calculateDatas($this->allEmotions, $this->iterations);
+        echo '<pre>';
+        print_r($this->allEmotions);
+        echo '</pre>';
+
         // Find most present emotion in last tweets
         if(empty($this->emotions)) {
             // Default emotion

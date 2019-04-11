@@ -10,13 +10,13 @@ class NaturalLanguageUnderstanding {
 
     public function nlu($_text) {
         $this->auth = $this->NLUAuth();
-        $results = $this->getCurl($_text);
+        $this->results = $this->getCurl($_text);
         // If can't translate tweet
-        if(isset($results->error)) {
+        if(isset($this->results->error)) {
             return "not emotion";
         }
-        $this->emotion = $this->getAverage($results);
-        return $this->emotion;
+        // Return all emotions
+        return $this->results;
     }
 
     public function getAverage($_results) {
@@ -31,6 +31,31 @@ class NaturalLanguageUnderstanding {
             }
         }
         return $maxIndex;
+    }
+
+    public function addNewEmotions($_arr, $_full) {
+        $index = ['sadness', 'joy', 'fear', 'disgust', 'anger'];
+        for ($i=0; $i < 5; $i++) { 
+            $fullIndex = $index[$i];
+            $_full[$i] = $_full[$i] + $_arr[$fullIndex];
+        }
+        return $_full;
+    }
+
+    public function calculateDatas($_arr, $_iterations) {
+        for ($i=0; $i<5 ; $i++) { 
+            $_arr[$i] = $_arr[$i] / $_iterations;
+        }
+
+        $newArr = array(
+            'sadness' => $_arr[0],
+            'joy' => $_arr[1],
+            'fear' => $_arr[2],
+            'disgust' => $_arr[3],
+            'anger' => $_arr[4]
+        );
+
+        return $newArr;
     }
 
     public function NLUAuth() {
