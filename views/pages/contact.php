@@ -12,7 +12,7 @@
                         <div class="member-shadow"></div>
                     </div>
                     <div class="member-infos">
-                        <a href="https://www.hugochapelain.fr/" class="member-name category"><span class="limon">@</span>Hugo Chapelain</a>
+                        <a href="https://www.hugochapelain.fr/" class="member-name category" target="_blank"><span class="limon">@</span>Hugo Chapelain</a>
                         <div class="member-role paragraph azul light">Back-end Developer</div>
                     </div>
                 </div>
@@ -22,7 +22,7 @@
                         <div class="member-shadow"></div>
                     </div>
                     <div class="member-infos">
-                        <a href="https://twitter.com/SaucySpray" class="member-name category"><span class="limon">@</span>Alexandre Chabeau</a>
+                        <a href="https://twitter.com/SaucySpray" class="member-name category" target="_blank"><span class="limon">@</span>Alexandre Chabeau</a>
                         <div class="member-role paragraph azul light">Design - UI & Front-end Developer</div>
                     </div>
                 </div>
@@ -32,7 +32,7 @@
                         <div class="member-shadow"></div>
                     </div>
                     <div class="member-infos">
-                        <a href="https://www.linkedin.com/in/%C3%A9lo%C3%AFse-isautier-865582178/" class="member-name category"><span class="limon">@</span>Eloïse Isautier</a>
+                        <a href="https://www.linkedin.com/in/%C3%A9lo%C3%AFse-isautier-865582178/" class="member-name category" target="_blank"><span class="limon">@</span>Eloïse Isautier</a>
                         <div class="member-role paragraph azul light">Design - Illustrations</div>
                     </div>
                 </div>
@@ -42,7 +42,7 @@
                         <div class="member-shadow"></div>
                     </div>
                     <div class="member-infos">
-                        <a href="http://maxime-bergerard.fr/" class="member-name category"><span class="limon">@</span>Maxime Bergerard</a>
+                        <a href="http://maxime-bergerard.fr/" class="member-name category" target="_blank"><span class="limon">@</span>Maxime Bergerard</a>
                         <div class="member-role paragraph azul light">Back-end Developer</div>
                     </div>
                 </div>
@@ -52,7 +52,7 @@
                         <div class="member-shadow"></div>
                     </div>
                     <div class="member-infos">
-                        <a href="https://www.linkedin.com/in/gautier-burias-a08a41164/" class="member-name category"><span class="limon">@</span>Gauthier Burias</a>
+                        <a href="https://www.linkedin.com/in/gautier-burias-a08a41164/" class="member-name category" target="_blank"><span class="limon">@</span>Gautier Burias</a>
                         <div class="member-role paragraph azul light">Back-end Developer</div>
                     </div>
                 </div>
