@@ -40,7 +40,9 @@ class App {
             }
             // Analyze tweet in english
             $emotion = $this->nlu->nlu($_tweet);
-            array_push($this->emotions, $emotion);
+            if($emotion !== "not emotion") {
+                array_push($this->emotions, $emotion);
+            }
         }
         // Find most present emotion in last tweets
         $this->mostEmotion = $this->countMostPresent($this->emotions);

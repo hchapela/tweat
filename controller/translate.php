@@ -16,7 +16,14 @@ class Translate {
         $_headers[] = 'Content-Type: application/json';
         $_query = '/v3/translate?version=2018-05-01';
         $response = $this->getCurl($_options, $_query, $_headers);
-        $response = $response->translations[0]->translation;
+        if(isset($response->error)) {
+            $response = "";
+        } else {
+            $response = $response->translations[0]->translation;
+        }
+        echo '<pre>';
+        print_r($response);
+        echo '</pre>';
         return $response;
     }
 

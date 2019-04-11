@@ -11,11 +11,19 @@ class NaturalLanguageUnderstanding {
     public function nlu($_text) {
         $this->auth = $this->NLUAuth();
         $results = $this->getCurl($_text);
+        // If can't translate tweet
+        if(isset($results->error)) {
+            return "not emotion";
+        }
         $this->emotion = $this->getAverage($results);
         return $this->emotion;
     }
 
     public function getAverage($_results) {
+        echo '<pre>';
+        print_r($_results);
+        echo '</pre>';
+        
         $_results = ($_results->emotion->document->emotion);
         $_results = (array) $_results;
         $maxValue = 0;
