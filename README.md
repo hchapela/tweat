@@ -7,6 +7,8 @@
 
 Tweat is a Web application that inspect your tweets and give you recipes based on the emotions found in your tweets.
 
+> Better run it on private navigation, there are issues with cookies
+
 ### Requirements
 
 - Composer
