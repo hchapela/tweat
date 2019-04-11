@@ -350,6 +350,7 @@ a {
   margin-left: 16px;
   border-radius: 100px;
   position: relative;
+  cursor: pointer;
 }
 
 /* Illustrations */

@@ -11,8 +11,8 @@
             <div class="meal-image"></div>
         </div>
         <div class="interactions">
-            <a href="<?=$_SESSION['strYoutube']?>" class="btn-orange">See the recipe</a>
-            <a href="#" class="share"><span class="icon-share"></span></a >
+            <a href="<?=$_SESSION['strYoutube']?>" target="_blank" class="btn-orange">See the recipe</a>
+            <div class="share"><span class="icon-share"></span></div>
         </div>
         <div class="charts">
             <div class="graphics">
