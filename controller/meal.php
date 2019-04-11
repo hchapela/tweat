@@ -54,19 +54,10 @@ class MealDB {
             'i' => $_ingredient
         ]);
         $this->mealList = $this->requestUrl($url)->meals;
-        echo '<pre>';
-        print_r($_ingredient);
-        echo '</pre>';
 
         // getRandIndex in Menu List
         $index = $this->getRandIndex($this->mealList);
-        if($this->mealList === NULL) {
-            echo '<pre>';
-            print_r($this->json["fakerecipe"]);
-            echo '</pre>';
-        } else {
-            return $this->getMeal($this->mealList[$index]);
-        }
+        return $this->getMeal($this->mealList[$index]);
     }
 
     // Get a meal within the list of menus

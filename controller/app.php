@@ -47,7 +47,7 @@ class App {
             $this->getMeal();
             $this->sendSession();
         }
-        // header("Location: ./result");
+        header("Location: ./result");
     }
 
     public function getTweets() {
