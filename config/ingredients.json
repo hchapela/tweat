@@ -56,9 +56,7 @@
         "strMealThumb": "https://www.displayfakefoods.com/store/pc/catalog/vc126350l_205_detail.jpg"
     },
     "errorrecipe": {
-        "strMeal": "Chicken Congee",
-        "strYoutube": "https://www.youtube.com/watch?v=kqEfk801E94",
-        "strMealThumb": "https://www.themealdb.com/images/media/meals/1529446352.jpg",
-        "idMeal": "52956"
+        "strMeal": "Strawberry pizza",
+        "strMealThumb": "https://i.dailymail.co.uk/i/pix/2017/11/01/21/45EA372300000578-5036531-Sweet_and_sour_Blogger_Cookies_and_Kate_has_created_a_strawberry-m-4_1509572299474.jpg"
     }
 }
