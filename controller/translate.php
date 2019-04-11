@@ -55,6 +55,8 @@ class Translate {
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_POST, 1);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $_options);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
         curl_setopt($ch, CURLOPT_USERPWD, 'apikey' . ':' . $apiKey);
         curl_setopt($ch, CURLOPT_HTTPHEADER, $_headers);
         $result = curl_exec($ch);
