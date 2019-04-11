@@ -11,13 +11,9 @@ class App {
     public $_account;
 
     public function __construct($_account) {
-        // If @ in account delete
-        // if($_account[0] == "@") {
-        //     unset($_account[0]);
-        // }
         $this->account = $_account;
         // Kanye west likes fish sticks
-        if ($this->account == "kanyewest") {
+        if ($this->account === "kanyewest" || $this->account === "@kanyewest") {
             $string = file_get_contents("../config/ingredients.json");
             $string = json_decode($string, true);
             echo '<pre>';
