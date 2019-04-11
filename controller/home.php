@@ -1,5 +1,9 @@
 <?php
 
+set_error_handler("error");
+function error() {
+    echo("GROSSE ERREUR");
+}
 
 include 'app.php';
 // Couldn't finish image creation with imagemagick
