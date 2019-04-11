@@ -3,7 +3,7 @@
 
 *This is a project for school, there is no commercial use*
 
-## Explainations
+## Explanations
 
 Tweat is a Web application that inspect your tweets and give you recipes based on the emotions found in your tweets.
 

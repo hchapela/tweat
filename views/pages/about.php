@@ -1,20 +1,30 @@
-<?php 
-
-?>
 <!DOCTYPE html>
 <html lang="en">
-<?php include("../partials/head.php"); ?>
-<title>Dooodle | about</title>
-</head>
-<body>
-    <?php include("../partials/header.php"); ?>
-    <div class='about-ctn'>
-        <span class='contact-title'>Dooodle<span class="red">.</span></span>
-        <span class='about-subtitle'>C'est quoi ?</span>
-        <p>C’est un évènement participatif propre à Hetic & aux Heticiens. Faites votre plus beau doodle, soumettez le & laissez les héticiens voter pour le plus beau dooodle.</p>
-        <p>Les dooodles avec le plus de vote avant le 01/06/2019 seront ensuite graffé par vous ou notre artiste sur le mur de la cour de l’école. </p>
-        <p>Si vous voulez plus d’information, n’hésitez pas à nous suivre sur Instagram @<a href="instagram.com">dooodle_hetic</a>.</p>
-    </div>
-    <?php include(VIEWS."partials/footer.php"); ?>
-</body>
+    <?php include (VIEWS."partials/head.php"); ?>
+    <body>
+        <?php include (VIEWS."partials/header.php"); ?>
+        <div class="about container">
+            <div class="about-title title azul">Eat what you tweet<span class="limon">.</span></div>
+            <p class="paragraph azul light">This is a project for school, there is no commercial use</p>
+            <div class="steps">
+                <div class="explanations">
+                    <div class="category orange bold">Explanations</div>
+                    <p class="paragraph azul light">Tweat is a Web application that inspect your tweets and give you recipes based on the emotions found in your tweets.</p>
+                </div>
+                <div class="uses">
+                    <div class="category orange bold">What do we use ?</div>
+                    <ul class="uses-list">
+                        <li><a href="https://www.themealdb.com/api.php" class="paragraph light">The meal DB</a></li>
+                        <li><a href="https://www.ibm.com/watson/services/natural-language-understanding/" class="paragraph light">IBM Natural Language Understanding</a></li>
+                        <li><a href="https://developer.twitter.com/" class="paragraph light">Twitter API</a></li>
+                    </ul>
+                </div>
+                <div class="code">
+                    <div class="category orange bold">Can I see the code ?</div>
+                    <p class="paragraph azul light">Of course, all our code is available on <a href="https://github.com/hchapela/tweat/" class="orange">github</a>.</p>
+                </div>
+            </div>
+        </div>
+        <?php include (VIEWS."partials/footer.php"); ?>
+    </body>
 </html>
