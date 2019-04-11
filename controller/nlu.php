@@ -2,12 +2,6 @@
 
 class NaturalLanguageUnderstanding {
 
-    public function aff($_text) {
-        echo '<pre>';
-        print_r($_text);
-        echo '</pre>';
-    }
-
     public function nlu($_text) {
         $this->auth = $this->NLUAuth();
         $this->results = $this->getCurl($_text);

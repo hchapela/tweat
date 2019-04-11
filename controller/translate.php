@@ -36,12 +36,6 @@ class Translate {
         return $response;
     }
 
-    public function aff($_text) {
-        echo '<pre>';
-        print_r($_text);
-        echo '</pre>';
-    }
-
     public function getCurl($_options, $_query, $_headers) {
         $config = parse_ini_file('../config/config.ini');
         $apiKey = $config['tr_key'];

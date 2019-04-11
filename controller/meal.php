@@ -12,6 +12,7 @@ class MealDB {
         $randIndex = $this->getRandIndex($this->ingredients['ingredients']);
         // Get list of menus with the chosen ingredients
         $this->getMenuList($this->ingredients['ingredients'][$randIndex]);
+        return $this->menu;
     }
 
     // Get random index in an array
@@ -41,7 +42,7 @@ class MealDB {
             print_r($this->json["fakerecipe"]);
             echo '</pre>';
         } else {
-            $this->getMeal($this->mealList[$index]);
+            return $this->getMeal($this->mealList[$index]);
         }
     }
 
@@ -53,10 +54,6 @@ class MealDB {
             'i' => $meal->idMeal
         ]);
         $this->menu = $this->requestUrl($url);
-
-        echo '<pre>';
-        print_r($this->menu);
-        echo '</pre>';
     }
 
     // Request to ThemealAPI

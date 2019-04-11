@@ -27,6 +27,8 @@ class App {
             // Analyze on each Tweet
             $this->getAnalyze();
             $this->getMeal();
+            $this->sendSession();
+            header("Location: ./result");
         }
         
     }
@@ -56,9 +58,9 @@ class App {
             // Analyze tweet in english
 
             $newEmotions = $this->nlu->nlu($_tweet);
-            $emotion = $this->nlu->getAverage($newEmotions);
 
-            if($emotion !== "not emotion") {
+            if($newEmotions !== "not emotion") {
+                $emotion = $this->nlu->getAverage($newEmotions);
                 // Prepare for calcul of datavisualisation
                 $newEmotions = ($newEmotions->emotion->document->emotion);
                 $newEmotions = (array) $newEmotions;
@@ -70,9 +72,6 @@ class App {
         }
 
         $this->allEmotions = $this->nlu->calculateDatas($this->allEmotions, $this->iterations);
-        echo '<pre>';
-        print_r($this->allEmotions);
-        echo '</pre>';
 
         // Find most present emotion in last tweets
         if(empty($this->emotions)) {
@@ -85,11 +84,21 @@ class App {
 
     public function getMeal() {
         $this->mealDB = new MealDB();
-        $this->mealDB->newMeal($this->mostEmotion);
+        $this->meal = $this->mealDB->newMeal($this->mostEmotion);
     }
 
     public function countMostPresent($array) {
         array_count_values($array);
         return $array[0];
+    }
+
+    // Create session with variables
+    public function sendSession() {
+        $_SESSION['emotions'] = $this->allEmotions;
+        $_SESSION['account'] = $this->account;
+        $this->meal = $this->meal->meals[0];
+        $_SESSION['strMeal'] = $this->meal->strMeal;
+        $_SESSION['strYoutube'] = $this->meal->strYoutube;
+        $_SESSION['strMealThumb'] = $this->meal->strMealThumb;
     }
 }
