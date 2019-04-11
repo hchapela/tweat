@@ -20,10 +20,6 @@ class NaturalLanguageUnderstanding {
     }
 
     public function getAverage($_results) {
-        echo '<pre>';
-        print_r($_results);
-        echo '</pre>';
-        
         $_results = ($_results->emotion->document->emotion);
         $_results = (array) $_results;
         $maxValue = 0;
