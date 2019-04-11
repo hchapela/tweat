@@ -11,4 +11,3 @@
         <p class="paragraph azul">Something went wrong<span class="limon">.</span></p>
     </div>
 </div>
-<?php include (VIEWS.'partials/modale.php') ?>

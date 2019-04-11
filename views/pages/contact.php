@@ -58,6 +58,5 @@
                 </div>
             </div>
         </div>
-        <?php include (VIEWS."partials/footer.php"); ?>
     </body>
 </html>

@@ -31,5 +31,7 @@
             </ul>
         </div>
     </div>
+    <?php include (VIEWS.'partials/modale.php') ?>
+    <?php include (VIEWS."partials/footer.php"); ?>
 </body>
 </html>
