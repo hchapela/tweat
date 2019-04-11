@@ -11,14 +11,28 @@ class App {
     public $_account;
 
     public function __construct($_account) {
+        // If @ in account delete
+        // if($_account[0] == "@") {
+        //     unset($_account[0]);
+        // }
         $this->account = $_account;
-        // Number of tweets you want
-        $this->maxTweets = 5;
-        // Get Tweets then slice them
-        $this->tweets = $this->getTweets();
-        // Analyze on each Tweet
-        $this->getAnalyze();
-        $this->getMeal();
+        // Kanye west likes fish sticks
+        if ($this->account == "kanyewest") {
+            $string = file_get_contents("../config/ingredients.json");
+            $string = json_decode($string, true);
+            echo '<pre>';
+            print_r($string["fakerecipe"]);
+            echo '</pre>';
+        } else {
+            // Number of tweets you want
+            $this->maxTweets = 5;
+            // Get Tweets then slice them
+            $this->tweets = $this->getTweets();
+            // Analyze on each Tweet
+            $this->getAnalyze();
+            $this->getMeal();
+        }
+        
     }
 
     public function getTweets() {
