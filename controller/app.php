@@ -72,7 +72,6 @@ class App {
         }
 
         $this->allEmotions = $this->nlu->calculateDatas($this->allEmotions, $this->iterations);
-
         // Find most present emotion in last tweets
         if(empty($this->emotions)) {
             // Default emotion
@@ -88,8 +87,10 @@ class App {
     }
 
     public function countMostPresent($array) {
-        array_count_values($array);
-        return $array[0];
+        $values = array_count_values($array);
+        arsort($values);
+        $popular = array_slice(array_keys($values), 0, 5, true);
+        return $popular[0];
     }
 
     // Create session with variables

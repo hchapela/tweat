@@ -4,10 +4,6 @@ $title = 'Tweat.';
 
 session_start();
 
-echo '<pre>';
-print_r($_SESSION);
-echo '</pre>';
-
 $emotions = array();
 
 foreach ($_SESSION['emotions'] as $emotion => $value) {
@@ -22,3 +18,5 @@ if($account[0] === "@") {
 }
 
 include '../views/pages/result.php';
+
+session_destroy();
