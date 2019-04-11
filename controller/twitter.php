@@ -40,9 +40,7 @@ class Twitter {
 
         // Handle errors
         if (isset($tweetsObject->errors)) {
-            echo '<pre>';
-            print_r($tweetsObject);
-            echo '</pre>';
+            // ERROR NO TWITTER ACCOUNT 404
         }
         return $tweetsObject;
     }
@@ -50,10 +48,11 @@ class Twitter {
     // Filter the content of the tweets wuthout date, likes etc.
     public function getTweets() {
         $tweets = [];
+        if(isset($this->response->errors)) {
+            return $tweets;
+        }
         foreach ($this->response as $_tweet => $value) {
-
             array_push($tweets, $this->response[$_tweet]->text);
-        
         }
         return $tweets;
     }

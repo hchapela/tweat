@@ -16,9 +16,6 @@ class App {
         if ($this->account === "kanyewest" || $this->account === "@kanyewest") {
             $string = file_get_contents("../config/ingredients.json");
             $string = json_decode($string, true);
-            echo '<pre>';
-            print_r($string["fakerecipe"]);
-            echo '</pre>';
         } else {
             // Number of tweets you want
             $this->maxTweets = 5;
@@ -58,7 +55,12 @@ class App {
             }
         }
         // Find most present emotion in last tweets
-        $this->mostEmotion = $this->countMostPresent($this->emotions);
+        if(empty($this->emotions)) {
+            // Default emotion
+            $this->mostEmotion = "sadness";
+        } else {
+            $this->mostEmotion = $this->countMostPresent($this->emotions);
+        }
     }
 
     public function getMeal() {
