@@ -286,8 +286,18 @@ a {
   height: 30%;
 }
 
+.error-image-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 200px;
+  position: relative;
+}
+
 .error-svg {
-  width: 33%;
+  width: 100%;
   height: 100%;
   background-repeat: no-repeat;
   background-size: contain;
@@ -307,6 +317,25 @@ a {
 
 .error0 { animation-delay: 0.2s; }
 .error4-2 { animation-delay: 0.4s; }
+
+.error-shadow {
+  display: block;
+  width: 20%;
+  height: 4px;
+  background-color: #333;
+  opacity: 0.32;
+  filter: blur(2px);
+  border-radius: 100%;
+  transition: 3.5s infinite cubic-bezier(0.165, 0.84, 0.44, 1);
+  position: absolute;
+  bottom: 0;
+  animation: floatingShadow linear infinite 1.6s;
+  will-change: transform;
+}
+
+.error-image-container-1 .error-shadow, .error-image-container-3 .error-shadow{
+  left: 63%;
+}
 
 .error-message {
   display: flex;
