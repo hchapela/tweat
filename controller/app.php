@@ -16,9 +16,27 @@ class App {
         if($this->account === "" || $this->account === "@") {
             header("Refresh:0");
         }
+        // SPOILER , THIS IS AN EASTER EGG
         if ($this->account === "kanyewest" || $this->account === "@kanyewest") {
+            // Get json
             $string = file_get_contents("../config/ingredients.json");
             $string = json_decode($string, true);
+
+            // Number of tweets you want
+            $this->maxTweets = 5;
+            // Get Tweets then slice them
+            $this->tweets = $this->getTweets();
+
+            // Analyze on each Tweet
+            $this->getAnalyze();
+
+            $_SESSION['emotions'] = $this->allEmotions;
+            $_SESSION['account'] = $this->account;
+            $this->meal = $string['kanyewest'];
+            $_SESSION['strMeal'] = $this->meal['strMeal'];
+            $_SESSION['strYoutube'] = $this->meal['strYoutube'];
+            $_SESSION['strMealThumb'] = $this->meal['strMealThumb'];
+
         } else {
             // Number of tweets you want
             $this->maxTweets = 5;
@@ -28,9 +46,8 @@ class App {
             $this->getAnalyze();
             $this->getMeal();
             $this->sendSession();
-            header("Location: ./result");
         }
-        
+        // header("Location: ./result");
     }
 
     public function getTweets() {
