@@ -201,6 +201,7 @@ a {
   display: flex;
   align-items: center;
   flex-direction: row;
+  margin-bottom: 20px;
   font-family: 'Montserrat', sans-serif;
   font-size: 28px;
   font-weight: 700;
@@ -211,37 +212,32 @@ a {
   justify-content: flex-start;
   align-items: center;
   flex-direction: row;
+  margin-bottom: 32px;
 }
 
 .graphics {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  width: 214px;
-  height: 180px;
+  flex-direction: column;
+  width: 265px;
+  height: 190px;
   position: relative;
   list-style: none;
 }
 
-.graphics::after {
-  display: block;
-  content: "";
-  width: 100%;
-  height: 1px;
-  background-color: #1A3263;
-  opacity: 0.32;
-  position: absolute;
-  bottom: 0;
-}
-
 .graphics-bars {
-  width: 30px;
-  max-height: 170px;
-  height: 170px;
+  width: 100%;
+  height: 30px;
   background-color: #FAB95B;
+  transition: ;
+  will-change: transform;
 }
 
-.numbers { list-style: none; }
+.numbers {
+  margin-left: 32px;
+  list-style: none;
+}
 
 .result-number {
   position: relative;
@@ -267,15 +263,8 @@ a {
 }
 
 .meal-name {
+  opacity: 0.12;
   line-height: 110px;
-}
-
-.interactions {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: row;
-  margin: 16px 0;
 }
 
 /* ERROR 404 */
@@ -329,6 +318,14 @@ a {
 
 /* Button */
 
+.interactions {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  margin: 16px 0;
+}
+
 .btn-orange {
   display: flex;
   justify-content: center;
@@ -350,6 +347,7 @@ a {
   background-color: #FF7657;
   width: 44px;
   height: 44px;
+  margin-left: 16px;
   border-radius: 100px;
   position: relative;
 }
@@ -390,7 +388,6 @@ a {
 
 .shadows {
   display: block;
-  content: "";
   width: 20%;
   height: 4px;
   background-color: #333;
@@ -418,37 +415,8 @@ a {
 }
 
 .shadow-1 { animation-delay: 0.4s }
-.shadow-2 { left: 33%; }
+.shadow-2 { left: 36%; }
 .shadow-3 { animation-delay: 0.1s }
-
-/* Animations */
-
-@keyframes floatingFood {
-  0% {
-    transform: translateY(10px);
-  }
-  50% {
-    transform: translateY(20px);
-  }
-  100% {
-    transform: translateY(10px);
-  }
-}
-
-@keyframes floatingShadow {
-  0% {
-    transform: scaleX(1);
-    
-  }
-  50% {
-    transform: scaleX(2);
-
-  }
-  100% {
-    transform: scaleX(1);
-
-  }
-}
 
 /* Modale */
 
@@ -465,7 +433,7 @@ a {
   z-index: 10;
 }
 
-.share {
+.modale-share {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
@@ -478,7 +446,7 @@ a {
   border: 2px solid rgba(250, 184, 92, 0.32);
 }
 
-.share-top {
+.modale-share-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -486,18 +454,18 @@ a {
   width: 100%;
 }
 
-.share-exit {
+.modale-share-exit {
   margin: 3% 4%;
   cursor: pointer;
 }
 
-.share-message {
+.modale-share-message {
   width: 92%;
   margin: 0 4%;
   background-color: rgba(251, 237, 213, 0.32);
 }
 
-.share-example {
+.modale-share-example {
   margin: 5px 14px;
 }
 
@@ -505,11 +473,157 @@ a {
   margin: 3% 4%;
 }
 
-.share-title { margin: 3% 4%; }
+.modale-share-title { margin: 3% 4%; }
+
+/* About */
+
+.explanations p {
+  line-height: 1.5;
+}
+
+.uses-list {
+  list-style: none;
+}
+
+.uses-list li {
+  position: relative;
+  letter-spacing: 0.4px;
+  line-height: 36px;
+  color: #1A3263;
+}
+
+.uses-list li:hover {
+  color: #FAB95B;
+}
+
+.uses-list li::before {
+  display: block;
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 10px;
+  background-color: #FAB95B;
+  position: absolute;
+  left: -16px;
+  bottom: 14px;
+}
+
+.code p {
+  margin-bottom: 32px;
+}
+
+/* Contact */
+
+.team {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-direction: column;
+  height: 70vh;
+}
+
+.team-member {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+}
+
+.member-image-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  width: 70px;
+  height: 70px;
+  margin-right: 32px;
+  position: relative;
+}
+
+.member-image {
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  transition: 3.5s infinite cubic-bezier(0.165, 0.84, 0.44, 1);
+  animation: floatingFood linear infinite 1.6s;
+  will-change: transform;
+}
+
+.team-member-1 .member-image {
+  background-image: url('../img/color/coffee_color.svg');
+  animation-delay: 0.3s;
+}
+.team-member-2 .member-image { background-image: url('../img/color/taco_colors.svg'); }
+.team-member-3 .member-image {
+  background-image: url('../img/error-0.svg');
+  animation-delay: 0.2s;
+}
+.team-member-4 .member-image {
+  background-image: url('../img/color/broccoli_colors.svg');
+  animation-delay: 0.5s;
+}
+.team-member-5 .member-image {
+  background-image: url('../img/color/pizza_colors.svg');
+  animation-delay: 0.1s;
+}
+
+.member-shadow {
+  display: block;
+  content: "";
+  width: 20%;
+  height: 4px;
+  background-color: #333;
+  opacity: 0.32;
+  filter: blur(2px);
+  border-radius: 100%;
+  transition: 3.5s infinite cubic-bezier(0.165, 0.84, 0.44, 1);
+  position: absolute;
+  bottom: -24px;
+  animation: floatingShadow linear infinite 1.6s;
+  will-change: transform;
+}
+
+.team-member-1 .member-shadow {
+  animation-delay: 0.3s;
+  left: 31%;
+}
+.team-member-3 .member-shadow { animation-delay: 0.2s; }
+.team-member-4 .member-shadow { animation-delay: 0.5s; }
+.team-member-5 .member-shadow { animation-delay: 0.1s; }
+
+.member-name {
+  display: block;
+  margin: 8px 0;
+  color: #1A3263 ;
+  transition: 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.member-role {
+  margin-left: 30px;
+}
+
+.member-name:hover { color: #FF7657 ;}
 
 /* Responsive */
 
-@media screen and (max-width: 684px) {
+@media screen and (max-width: 500px) {
+  .member-name {
+    font-size: 22px;
+  }
+
+  .member-role {
+    font-size: 16px;
+    margin-left: 8px;
+  }
+
+  .member-image-container {
+    margin-right: 12px;
+  }
+}
+
+@media screen and (max-width: 800px) {
   .container {
     margin: 0 5%;
   }
@@ -545,16 +659,43 @@ a {
   }
 
   .graphics {
-    width: 170px;
+    width: 150px;
   }
 
-  .graphics-bars {
-    width: 26px;
-    max-height: 150px;
-    height: 150px;
+  .numbers {
+    margin: 12px;
   }
 
   .phrase {
     display: none;
+  }
+}
+
+/* Animations */
+
+@keyframes floatingFood {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes floatingShadow {
+  0% {
+    transform: scaleX(1);
+    
+  }
+  50% {
+    transform: scaleX(2);
+
+  }
+  100% {
+    transform: scaleX(1);
+
   }
 }
