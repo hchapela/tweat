@@ -13,6 +13,9 @@ class App {
     public function __construct($_account) {
         $this->account = $_account;
         // Kanye west likes fish sticks
+        if($this->account === "" || $this->account === "@") {
+            header("Refresh:0");
+        }
         if ($this->account === "kanyewest" || $this->account === "@kanyewest") {
             $string = file_get_contents("../config/ingredients.json");
             $string = json_decode($string, true);
@@ -49,7 +52,6 @@ class App {
             if ($lang !== "en") {
                 $format = $lang."-en";
                 $_tweet = $this->translate->translateText($_tweet, $format);
-                
             }
             // Analyze tweet in english
 

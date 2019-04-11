@@ -21,9 +21,6 @@ class Translate {
         } else {
             $response = $response->translations[0]->translation;
         }
-        echo '<pre>';
-        print_r($response);
-        echo '</pre>';
         return $response;
     }
 

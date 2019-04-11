@@ -40,7 +40,7 @@ class Twitter {
 
         // Handle errors
         if (isset($tweetsObject->errors)) {
-            // ERROR NO TWITTER ACCOUNT 404
+            header("Refresh:0; url=./404");
         }
         return $tweetsObject;
     }

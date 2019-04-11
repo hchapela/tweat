@@ -8,7 +8,7 @@ class MealDB {
         $this->json = json_decode($string, true);
         // Get ingredients of the detected emotion
         $this->ingredients = $this->json['emotions'][$_emotion];
-        // Choose random ingredient BUT AT FINAL USER WILL CHOOSE HIS INGREDIENT
+        // Choose random ingredient
         $randIndex = $this->getRandIndex($this->ingredients['ingredients']);
         // Get list of menus with the chosen ingredients
         $this->getMenuList($this->ingredients['ingredients'][$randIndex]);
