@@ -7,10 +7,10 @@ $messages = [
 ];
 
 // Form sent
-if(!empty($_GET))
+if(!empty($_POST))
 {
     // Get variables
-    $account = trim($_GET['account']);
+    $account = trim($_POST['account']);
 
     // Handle errors
     if(empty($account))
@@ -22,12 +22,12 @@ if(!empty($_GET))
     if(empty($messages['error']))
     {
         $app = new App($account);
-        $_GET['account'] = '';
+        $_POST['account'] = '';
     }
 }
 
 // Form not sent
 else
 {
-    $_GET['account'] = '';
+    $_POST['account'] = '';
 }
