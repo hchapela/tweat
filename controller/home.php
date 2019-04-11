@@ -2,7 +2,8 @@
 
 
 include 'app.php';
-$app = new App();
+include 'form-handler.php';
+// $app = new App();
 
 $title = 'Tweat.';
 

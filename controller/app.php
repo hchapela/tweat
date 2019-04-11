@@ -8,7 +8,10 @@ include 'meal.php';
 
 class App {
 
-    public function __construct() {
+    public $_account;
+
+    public function __construct($_account) {
+        $this->account = $_account;
         // Number of tweets you want
         $this->maxTweets = 5;
         // Get Tweets then slice them
@@ -19,7 +22,7 @@ class App {
     }
 
     public function getTweets() {
-        $this->twitter = new Twitter("gouvernementFR");
+        $this->twitter = new Twitter($this->account);
         $this->tweets = $this->twitter->tweets;
         return array_slice($this->tweets, 0, $this->maxTweets);
     }
