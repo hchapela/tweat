@@ -8,7 +8,7 @@
         <div class="advice title azul">Today, you should eat <span class="limon">...</span></div>
         <div class="meal">
             <div class="meal-name big-title azul"><?=$_SESSION['strMeal']?></div>
-            <div class="meal-image"></div>
+            <div class="meal-image" style="background-image: url('<?= $_SESSION['strMealThumb'] ?>')"></div>
         </div>
         <div class="interactions">
             <a href="<?=$_SESSION['strYoutube']?>" target="_blank" class="btn-orange">See the recipe</a>
