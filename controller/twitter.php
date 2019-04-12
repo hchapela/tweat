@@ -39,8 +39,9 @@ class Twitter {
         ]);
 
         // Handle errors
-        if (isset($tweetsObject->errors)) {
-            header("Refresh:0; url=./404");
+        if (isset($tweetsObject->errors) || empty($tweetsObject)) {
+            header("Refresh:0; url=./");
+            exit;
         }
         return $tweetsObject;
     }
