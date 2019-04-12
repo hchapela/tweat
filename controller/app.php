@@ -13,11 +13,11 @@ class App {
     public function __construct($_account) {
         $this->account = $_account;
         // Kanye west likes fish sticks
-        if($this->account === "" || $this->account === "@") {
+        if($this->account === "" || $this->account === "@" || $this->account === "44") {
             header("Refresh:0");
         }
         // SPOILER , THIS IS AN EASTER EGG
-        if ($this->account === "kanyewest" || $this->account === "@kanyewest") {
+        else if ($this->account === "kanyewest" || $this->account === "@kanyewest") {
             // Get json
             $string = file_get_contents("../config/ingredients.json");
             $string = json_decode($string, true);

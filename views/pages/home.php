@@ -21,6 +21,7 @@
                 <div class="shadows shadow-2"></div>
             </div>
         </div>
-        <?php include (VIEWS."partials/footer.php"); ?>
+        <?php include (VIEWS.'partials/loader.php') ?>
+        <?php //include (VIEWS."partials/footer_home.php"); ?>
     </body>
 </html>

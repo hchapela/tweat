@@ -37,3 +37,9 @@ $shareBtn.addEventListener('click', () => {
         $modale.style.display = "none"
     })
 })
+
+/**
+ * Meal
+ */
+
+const $mealImage = document.querySelector('.meal-image')

@@ -16,11 +16,11 @@
         </div>
         <div class="charts">
             <div class="graphics">
-                <div style="width:<?=$emotions[0]?>%" class="graphics-bars graphics-bars-1"></div>
-                <div style="width:<?=$emotions[1]?>%" class="graphics-bars graphics-bars-2"></div>
-                <div style="width:<?=$emotions[2]?>%" class="graphics-bars graphics-bars-3"></div>
-                <div style="width:<?=$emotions[3]?>%" class="graphics-bars graphics-bars-4"></div>
-                <div style="width:<?=$emotions[4]?>%" class="graphics-bars graphics-bars-5"></div>
+                <div style="width:<?=$emotions[0]?>%;" class="graphics-bars graphics-bars-1"></div>
+                <div style="width:<?=$emotions[1]?>%;" class="graphics-bars graphics-bars-2"></div>
+                <div style="width:<?=$emotions[2]?>%;" class="graphics-bars graphics-bars-3"></div>
+                <div style="width:<?=$emotions[3]?>%;" class="graphics-bars graphics-bars-4"></div>
+                <div style="width:<?=$emotions[4]?>%;" class="graphics-bars graphics-bars-5"></div>
             </div>
             <ul class="numbers">
                 <li class="result-number result-number-2"><span class="percent semi azul"><?= $emotions[0]?>% </span><span class="phrase light azul">of the time in a </span><span class="semi-italic orange">sadness</span><span class="phrase light azul"> mood.</span></li>
