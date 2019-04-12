@@ -4,26 +4,6 @@ class MealDB {
 
     public function newMeal($_emotion = "sadness") {
 
-
-
-
-
-
-
-
-
-
-
-        // DEFINE EMOTION BY DEFAULT IF NOT
-
-
-
-
-
-
-
-
-
         // Get all ingredients for each emotion in json
         $string = file_get_contents("../config/ingredients.json");
         $this->json = json_decode($string, true);
